@@ -57,6 +57,13 @@
       margin: 10px;
     }
 
+    .card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
     .media {
       max-width: 100%;
       border-radius: 10px;
@@ -102,73 +109,97 @@
   <!-- Images and Videos below this line -->
   <div class="media-container">
     <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/944668637325844510/IMG__.jpg?ex=65872d3a&is=6574b83a&hm=6172ba2330decddf57c6daf866ae3f15c8d7bcc463d659ff98faec40553b3bea&"
-        alt="Image 1" class="media" onclick="toggleZoom(this)" />
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/944668637325844510/IMG__.jpg?ex=65872d3a&is=6574b83a&hm=6172ba2330decddf57c6daf866ae3f15c8d7bcc463d659ff98faec40553b3bea&"
+          alt="Image 1" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
-    <!-- Add more images with the media-box div as needed -->
+    <!-- Add more cards with images and videos as needed -->
 
     <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/933703782880149524/mta-screen_2022-01-20_14-41-51.png" alt="Image 2" class="media" onclick="toggleZoom(this)" />
-    </div>
-
-    <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/872914862823596042/mta-screen_2021-03-04_19-46-10.png?ex=65848951&is=65721451&hm=0c3ccefce0a1c62ad3f1b1bb2cb1093a8a89fe4ade2da018fe327f31f06bd191&"
-        alt="Image 3" class="media" onclick="toggleZoom(this)" />
-    </div>
-
-    <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/868841388354199622/Screenshot_-_YouTube.jpg?ex=65882c99&is=6575b799&hm=f3d5c0ad88f9ab72ae0dcde59210f127e83d432eb0d55f05b1e148afaa1e2680&"
-        alt="Image 4" class="media" onclick="toggleZoom(this)" />
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/933703782880149524/mta-screen_2022-01-20_14-41-51.png" alt="Image 2" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
     <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/864800319674253342/mta-screen_2021-07-14_11-27-19.png?ex=6582b38f&is=65703e8f&hm=8b6a00d5da8b24b676899581d6ba2017539b212c660748ef575362a12e932742&"
-        alt="Image 5" class="media" onclick="toggleZoom(this)" />
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/872914862823596042/mta-screen_2021-03-04_19-46-10.png?ex=65848951&is=65721451&hm=0c3ccefce0a1c62ad3f1b1bb2cb1093a8a89fe4ade2da018fe327f31f06bd191&"
+          alt="Image 3" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
     <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/844336569367134208/mta-screen_2021-03-04_23-39-29.png?ex=65821535&is=656fa035&hm=ccc3d92941ad31dc9f58917f29f209f50dd01ae1867615383355d528225252f5&"
-        alt="Image 6" class="media" onclick="toggleZoom(this)" />
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/868841388354199622/Screenshot_-_YouTube.jpg?ex=65882c99&is=6575b799&hm=f3d5c0ad88f9ab72ae0dcde59210f127e83d432eb0d55f05b1e148afaa1e2680&"
+          alt="Image 4" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
     <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/842772045568671814/mta-screen_2021-05-14_16-34-21.png?ex=65859ea1&is=657329a1&hm=d7dbb96b0e8c0e2439ac5ee4ca2482e90def6b15354a42fb9f9c61543c7ef487&"
-        alt="Image 7" class="media" onclick="toggleZoom(this)" />
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/864800319674253342/mta-screen_2021-07-14_11-27-19.png?ex=6582b38f&is=65703e8f&hm=8b6a00d5da8b24b676899581d6ba2017539b212c660748ef575362a12e932742&"
+          alt="Image 5" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
     <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/836224394727653376/IMG_20210426_145515.jpg?ex=65897c28&is=65770728&hm=9ebcbdc44da10c070d6298292bae1dd3bd7fb4cf3aa8140fe8a2ac3ded2e4495&"
-        alt="Image 8" class="media" onclick="toggleZoom(this)" />
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/844336569367134208/mta-screen_2021-03-04_23-39-29.png?ex=65821535&is=656fa035&hm=ccc3d92941ad31dc9f58917f29f209f50dd01ae1867615383355d528225252f5&"
+          alt="Image 6" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
     <div class="media-box">
-      <img src="https://cdn.discordapp.com/attachments/827466194981355531/831931981356597279/mta-screen_2021-04-14_01-04-58.png?ex=65831908&is=6570a408&hm=aa4e032345fbf25d334e1bc9bf5566f0b01159018f681142348e22795a52a840&"
-        alt="Image 9" class="media" onclick="toggleZoom(this)" />
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/842772045568671814/mta-screen_2021-05-14_16-34-21.png?ex=65859ea1&is=657329a1&hm=d7dbb96b0e8c0e2439ac5ee4ca2482e90def6b15354a42fb9f9c61543c7ef487&"
+          alt="Image 7" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
     <div class="media-box">
-      <video controls class="media" onclick="toggleZoom(this)">
-        <source src="https://cdn.discordapp.com/attachments/827466194981355531/942491630412365905/MTA__San_Andreas_2022-02-13_20-36-04_Trim.mp4?ex=65887c3b&is=6576073b&hm=dcf61995b16f6456e105074f6ce6bed09db41a1addc57964b7f64510045bc725&"
-          type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/836224394727653376/IMG_20210426_145515.jpg?ex=65897c28&is=65770728&hm=9ebcbdc44da10c070d6298292bae1dd3bd7fb4cf3aa8140fe8a2ac3ded2e4495&"
+          alt="Image 8" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
     <div class="media-box">
-      <video controls class="media" onclick="toggleZoom(this)">
-        <source src="https://cdn.discordapp.com/attachments/827466194981355531/847243299264659456/2021_____2021.mp4?ex=65836dcf&is=6570f8cf&hm=62202956d4c3818e898196887df9b6f50da4bdd7b38be9a476609e4855d26540&"
-          type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="card">
+        <img src="https://cdn.discordapp.com/attachments/827466194981355531/831931981356597279/mta-screen_2021-04-14_01-04-58.png?ex=65831908&is=6570a408&hm=aa4e032345fbf25d334e1bc9bf5566f0b01159018f681142348e22795a52a840&"
+          alt="Image 9" class="media" onclick="toggleZoom(this)" />
+      </div>
     </div>
 
     <div class="media-box">
-      <video controls class="media" onclick="toggleZoom(this)">
-        <source src="https://cdn.discordapp.com/attachments/933703566248513596/950319702759067709/MedalTVGrandTheftAutoSanAndreas20220306071507.mp4?ex=65894731&is=6576d231&hm=0dd5663ff5bfbef96eb66b2cb8fd3ad9c4cf72b0c85eef375b6faa61dceac1ef&"
-          type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="card">
+        <video controls class="media" onclick="toggleZoom(this)">
+          <source src="https://cdn.discordapp.com/attachments/827466194981355531/942491630412365905/MTA__San_Andreas_2022-02-13_20-36-04_Trim.mp4?ex=65887c3b&is=6576073b&hm=dcf61995b16f6456e105074f6ce6bed09db41a1addc57964b7f64510045bc725&"
+            type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="media-box">
+      <div class="card">
+        <video controls class="media" onclick="toggleZoom(this)">
+          <source src="https://cdn.discordapp.com/attachments/827466194981355531/847243299264659456/2021_____2021.mp4?ex=65836dcf&is=6570f8cf&hm=62202956d4c3818e898196887df9b6f50da4bdd7b38be9a476609e4855d26540&"
+            type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="media-box">
+      <div class="card">
+        <video controls class="media" onclick="toggleZoom(this)">
+          <source src="https://cdn.discordapp.com/attachments/933703566248513596/950319702759067709/MedalTVGrandTheftAutoSanAndreas20220306071507.mp4?ex=65894731&is=6576d231&hm=0dd5663ff5bfbef96eb66b2cb8fd3ad9c4cf72b0c85eef375b6faa61dceac1ef&"
+            type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
 
     <!-- Add more media-box divs as needed -->
@@ -181,7 +212,7 @@
 
   <script>
     function toggleZoom(element) {
-      element.classList.toggle("zoomed");
+      element.closest('.media').classList.toggle("zoomed");
     }
   </script>
 
