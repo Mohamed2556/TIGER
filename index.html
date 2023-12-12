@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<title>Your Web Page Title</title>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discord Server Status</title>
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -305,7 +307,7 @@
 <body>
 
 <button onclick="redirectToYouTube()">
-  Yotube JAMES⚔️
+Yotube JAMES
   <div class="star-1">
     <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
   </div>
@@ -321,5 +323,54 @@
   }
 </script>
 
+<!-- Visitor Count -->
+<style>
+  /* Add your desired text styles here */
+  #visitorCount {
+    font-weight: bold;
+    color: #ff5733; /* Change the color as needed */
+    /* Add other styles as needed */
+  }
+</style>
+
+<style>
+  /* Text style for the visitor count message */
+  #visitorMessage {
+    color: white; /* Change the color to white or your preferred color */
+    /* Add other styles as needed */
+  }
+
+  /* Text style for the visitor count number */
+  #visitorCount {
+    font-weight: bold;
+    color: #ff5733; /* Change the color as needed */
+    /* Add other styles as needed */
+  }
+</style>
+
+<!-- Visitor Count -->
+<p id="visitorMessage">This website has been visited <span id="visitorCount">0</span> times.</p>
+
+<script>
+  // Function to increment and display the visitor count
+  function incrementCounter() {
+    if (localStorage.getItem('visitCount') === null) {
+      // If the counter doesn't exist, initialize it to 1
+      localStorage.setItem('visitCount', 1);
+    } else {
+      // If the counter exists, increment it
+      let count = parseInt(localStorage.getItem('visitCount'), 10);
+      count++;
+      localStorage.setItem('visitCount', count);
+    }
+
+    // Display the visitor count
+    document.getElementById('visitorCount').innerText = localStorage.getItem('visitCount');
+  }
+
+  // Run the incrementCounter function when the page loads
+  window.onload = incrementCounter;
+</script>
 </body>
-</html>
+
+
