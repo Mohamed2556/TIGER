@@ -12,12 +12,32 @@
       padding: 0;
       background: linear-gradient(0deg, #000000 0%, #750000 100%);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden; /* Prevent scrollbar due to animation */
+    }
+
+    #dragon-container {
+      position: absolute;
+      top: 10%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: left;
+      pointer-events: none; /* Ensure the dragon doesn't interfere with mouse events on other elements */
+    }
+
+    #dragon {
+      width: 150px;
+      height: 150px;
+      transition: transform 0.1s ease-in-out;
     }
 
     .container {
       text-align: center;
       padding: 50px;
       color: rgb(4, 0, 237), 255, 255); /* Set text color to white or your preferred color */
+      position: relative;
+      z-index: 1; /* Ensure the text is above the dragon */
     }
 
     .server-image {
@@ -29,75 +49,21 @@
     }
 
     .server-image.zoomed {
-      transform: scale(1.5); /* Adjust the scale factor for the zoom effect */
+      transform: scale(1.5);
     }
 
     h1 {
       font-size: 2.5em;
       margin: 20px 0;
     }
-
-    p {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
-
-    #totalMembers {
-      font-weight: bold;
-    }
-
-    .media-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .media-box {
-      margin: 10px;
-    }
-
-    .card {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-      background-color: #fff;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card-title {
-      font-size: 1.5em;
-      padding: 10px;
-      background-color: #333;
-      color: #fff;
-      margin: 0;
-    }
-
-    .media {
-      max-width: 100%;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .media.zoomed {
-      transform: scale(2); /* Adjust the scale factor for the zoom effect */
-    }
-
-    .discord-link {
-      color: #7289da; /* Set Discord color */
-      text-decoration: none;
-      font-weight: bold;
-    }
   </style>
 </head>
 
 <body>
+
+  <div id="dragon-container">
+    <img id="dragon" src="https://bestanimations.com/media/dragons/289479165dragon-animated-gif-67.gif" alt="Dragon">
+  </div>
 
   <div class="container">
     <img src="https://images-ext-1.discordapp.net/external/bhtUL203evEWGthd_hgnH-KEZy3fYWxHbkdegUl6cog/%3Fsize%3D1024/https/cdn.discordapp.com/icons/759529731879337985/100ce2258bf73793b75874663cf25cc3.png?format=webp&quality=lossless&width=993&height=993"
@@ -234,12 +200,33 @@
 
   <!-- More content -->
 
-  <script src="script.js" defer></script>
-
   <script>
-    function toggleZoom(element) {
-      element.closest('.media').classList.toggle("zoomed");
+    const dragon = document.getElementById('dragon');
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let dragonX = 0;
+    let dragonY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    function animate() {
+      requestAnimationFrame(animate);
+      
+      const easing = 0.1;
+      const dx = mouseX - dragonX;
+      const dy = mouseY - dragonY;
+      
+      dragonX += dx * easing;
+      dragonY += dy * easing;
+      
+      dragon.style.transform = `translate(${dragonX}px, ${dragonY}px)`;
     }
+    
+    animate();
   </script>
 
 </body>
