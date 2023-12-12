@@ -12,7 +12,7 @@
       padding: 0;
       background: linear-gradient(0deg, #000000 0%, #750000 100%);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden; /* Prevent scrollbar due to animation */
+      overflow: hidden;
     }
 
     #dragon-container {
@@ -23,7 +23,7 @@
       display: flex;
       justify-content: center;
       align-items: left;
-      pointer-events: none; /* Ensure the dragon doesn't interfere with mouse events on other elements */
+      pointer-events: none;
     }
 
     #dragon {
@@ -35,9 +35,9 @@
     .container {
       text-align: center;
       padding: 50px;
-      color: rgb(4, 0, 237), 255, 255); /* Set text color to white or your preferred color */
+      color: rgb(4, 0, 237);
       position: relative;
-      z-index: 1; /* Ensure the text is above the dragon */
+      z-index: 1;
     }
 
     .server-image {
@@ -78,15 +78,8 @@
     <p>R.ESCOBAR Members: <span id="activeMembers">200</span></p>
 
     <p>THE BEST GANG IN MTA: <span id="inactiveMembers">R.ESCOBAR#1</span></p>
-
-    <p><a href="https://discord.gg/3pkU9Dn9Ug" class="discord-link" target="_blank">Discord Link</a></p>
-
-    <p><a href="https://www.youtube.com/channel/UCB1t3KkiQHjT37Dhxzg0guA" class="discord-link" target="_blank" style="color: #ff0000;">Youtube Link JAMES</a></p>
   </div>
 
-  <!-- Members-related content above this line -->
-
-  <!-- Images and Videos below this line -->
   <div class="media-container">
     <div class="media-box">
       <div class="card">
@@ -95,8 +88,6 @@
           alt="Image 1" class="media" onclick="toggleZoom(this)" />
       </div>
     </div>
-
-    <!-- Add more cards with images and videos as needed -->
 
     <div class="media-box">
       <div class="card">
@@ -193,12 +184,52 @@
         </video>
       </div>
     </div>
-
-    <!-- Add more media-box divs as needed -->
-
   </div>
 
-  <!-- More content -->
+  <style>
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+  
+    .youtube-button {
+      background-color: #ff0000;
+      color: #ffffff;
+      border: 2px solid #ff0000;
+    }
+  
+    .youtube-button:hover {
+      background-color: #ffffff;
+      color: #ff0000;
+    }
+  
+    .discord-button {
+      background-color: #7289da;
+      color: #ffffff;
+      border: 2px solid #7289da;
+    }
+  
+    .discord-button:hover {
+      background-color: #ffffff;
+      color: #7289da;
+    }
+  </style>
+  
+  <div class="menu">
+    <a href="https://www.youtube.com/channel/UCB1t3KkiQHjT37Dhxzg0guA" class="button youtube-button" target="_blank">Youtube Link JAMES</a>
+    <a href="https://discord.gg/3pkU9Dn9Ug" class="button discord-button" target="_blank">Discord Link</a>
+  </div>
 
   <script>
     const dragon = document.getElementById('dragon');
@@ -227,6 +258,10 @@
     }
     
     animate();
+
+    function toggleZoom(element) {
+      element.classList.toggle("zoomed");
+    }
   </script>
 
 </body>
