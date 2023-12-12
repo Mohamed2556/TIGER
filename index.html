@@ -1,84 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truth Palestine</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Server Status</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="login-container" id="login-container">
-        <img src="https://static.vecteezy.com/system/resources/previews/018/758/346/non_2x/illustration-of-save-palestine-palestine-map-with-wire-perfect-for-print-banner-poster-campaign-etc-free-vector.jpg" class="logo">
-        <h2>Truth Palestine</h2>
 
-        <!-- Login Form -->
-        <form id="login-form">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="button" onclick="showVideo()">Login</button>
-        </form>
+  <div class="container">
+    <img src="https://images-ext-1.discordapp.net/external/bhtUL203evEWGthd_hgnH-KEZy3fYWxHbkdegUl6cog/%3Fsize%3D1024/https/cdn.discordapp.com/icons/759529731879337985/100ce2258bf73793b75874663cf25cc3.png?format=webp&quality=lossless&width=993&height=993"
+      alt="Server Icon" class="server-image" />
 
-        <!-- Registration Form -->
-        <form id="registration-form" style="display: none;">
-            <label for="new-username">New Username</label>
-            <input type="text" id="new-username" name="new-username" required>
-            
-            <label for="new-password">New Password</label>
-            <input type="password" id="new-password" name="new-password" required>
+    <h1>Server R.ESCOBAR#1👑</h1>
 
-            <button type="submit">Register</button>
-        </form>
+    <p>OWNER: <span id="totalMembers">JAMES⚔️</span></p>
 
-        <!-- Toggle between Login and Registration forms -->
-        <p id="toggle-form-text">Don't have an account? <a href="#" id="toggle-form-link">Register here</a></p>
+    <p>Leader Members: <span id="totalBots">6</span></p>
+
+    <p>R.ESCOBAR Members: <span id="activeMembers">200</span></p>
+
+    <p>THE BEST GANG IN MTA: <span id="inactiveMembers">R.ESCOBAR#1</span></p>
+  </div>
+
+  <!-- Members-related content above this line -->
+
+  <!-- Images and Videos below this line -->
+  <div class="media-container">
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/944668637325844510/IMG__.jpg?ex=65872d3a&is=6574b83a&hm=6172ba2330decddf57c6daf866ae3f15c8d7bcc463d659ff98faec40553b3bea&"
+        alt="Image 1" class="media" />
     </div>
 
-    <div id="video-container" style="display: none;">
-        <!-- Replace 'YOUR_YOUTUBE_EMBED_CODE' with the actual embed code from YouTube -->
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/f0oy-NicIgE?si=l27BYZ4AM4uiTWCX" frameborder="0" allowfullscreen></iframe>
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/933703782880149524/mta-screen_2022-01-20_14-41-51.png" alt="Image 2" class="media" />
     </div>
 
-    <p id="login-count" style="display: none;">Login Count: 1</p>
-    <p id="view-count" style="display: none;">View Count: 1</p>
+    <!-- Add more images with the media-box div as needed -->
 
-    <div id="background-message" style="display: none; background-color: black; color: white; text-align: center; padding: 20px;">
-        <p>Free Palestine</p>
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/872914862823596042/mta-screen_2021-03-04_19-46-10.png?ex=65848951&is=65721451&hm=0c3ccefce0a1c62ad3f1b1bb2cb1093a8a89fe4ade2da018fe327f31f06bd191&"
+        alt="Image 3" class="media" />
     </div>
 
-    <script src="script.js"></script>
-    <script>
-        // Set the initial login count and view count
-        let loginCount = 1;
-        let viewCount = 1;
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/868841388354199622/Screenshot_-_YouTube.jpg?ex=65882c99&is=6575b799&hm=f3d5c0ad88f9ab72ae0dcde59210f127e83d432eb0d55f05b1e148afaa1e2680&"
+        alt="Image 4" class="media" />
+    </div>
 
-        function showVideo() {
-            // Increment the login count
-            loginCount++;
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/864800319674253342/mta-screen_2021-07-14_11-27-19.png?ex=6582b38f&is=65703e8f&hm=8b6a00d5da8b24b676899581d6ba2017539b212c660748ef575362a12e932742&"
+        alt="Image 5" class="media" />
+    </div>
 
-            
-            viewCount++;
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/844336569367134208/mta-screen_2021-03-04_23-39-29.png?ex=65821535&is=656fa035&hm=ccc3d92941ad31dc9f58917f29f209f50dd01ae1867615383355d528225252f5&"
+        alt="Image 6" class="media" />
+    </div>
 
-            
-            document.getElementById('login-count').textContent = 'Login Count: ' + loginCount;
-            document.getElementById('view-count').textContent = 'View Count: ' + viewCount;
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/842772045568671814/mta-screen_2021-05-14_16-34-21.png?ex=65859ea1&is=657329a1&hm=d7dbb96b0e8c0e2439ac5ee4ca2482e90def6b15354a42fb9f9c61543c7ef487&"
+        alt="Image 7" class="media" />
+    </div>
 
-            
-            document.getElementById('login-count').style.display = 'block';
-            document.getElementById('view-count').style.display = 'block';
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/836224394727653376/IMG_20210426_145515.jpg?ex=65897c28&is=65770728&hm=9ebcbdc44da10c070d6298292bae1dd3bd7fb4cf3aa8140fe8a2ac3ded2e4495&"
+        alt="Image 8" class="media" />
+    </div>
 
-            
-            document.getElementById('login-container').style.display = 'none';
+    <div class="media-box">
+      <img src="https://cdn.discordapp.com/attachments/827466194981355531/831931981356597279/mta-screen_2021-04-14_01-04-58.png?ex=65831908&is=6570a408&hm=aa4e032345fbf25d334e1bc9bf5566f0b01159018f681142348e22795a52a840&"
+        alt="Image 9" class="media" />
+    </div>
 
-            
-            document.getElementById('video-container').style.display = 'block';
+    <div class="media-box">
+      <video controls class="media">
+        <source src="https://cdn.discordapp.com/attachments/827466194981355531/942491630412365905/MTA__San_Andreas_2022-02-13_20-36-04_Trim.mp4?ex=65887c3b&is=6576073b&hm=dcf61995b16f6456e105074f6ce6bed09db41a1addc57964b7f64510045bc725&"
+          type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-            
-            document.getElementById('background-message').style.display = 'block';
-        }
-    </script>
+    <div class="media-box">
+      <video controls class="media">
+        <source src="https://cdn.discordapp.com/attachments/827466194981355531/847243299264659456/2021_____2021.mp4?ex=65836dcf&is=6570f8cf&hm=62202956d4c3818e898196887df9b6f50da4bdd7b38be9a476609e4855d26540&"
+          type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="media-box">
+      <video controls class="media">
+        <source src="https://cdn.discordapp.com/attachments/933703566248513596/950319702759067709/MedalTVGrandTheftAutoSanAndreas20220306071507.mp4?ex=65894731&is=6576d231&hm=0dd5663ff5bfbef96eb66b2cb8fd3ad9c4cf72b0c85eef375b6faa61dceac1ef&"
+          type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Add more media-box divs as needed -->
+
+  </div>
+
+  <!-- More content -->
+
+  <script src="script.js" defer></script>
+
 </body>
+
 </html>
