@@ -28,10 +28,6 @@
       transition: transform 0.3s ease-in-out;
     }
 
-    .server-image:hover {
-      transform: scale(1.2); /* Adjust the scale factor for the hover effect */
-    }
-
     .server-image.zoomed {
       transform: scale(1.5); /* Adjust the scale factor for the zoom effect */
     }
@@ -66,10 +62,6 @@
       border-radius: 10px;
       cursor: pointer;
       transition: transform 0.3s ease-in-out;
-    }
-
-    .media:hover {
-      transform: scale(1.2); /* Adjust the scale factor for the hover effect */
     }
 
     .media.zoomed {
@@ -156,7 +148,7 @@
     </div>
 
     <div class="media-box">
-      <video controls class="media">
+      <video controls class="media" onclick="toggleZoom(this)">
         <source src="https://cdn.discordapp.com/attachments/827466194981355531/942491630412365905/MTA__San_Andreas_2022-02-13_20-36-04_Trim.mp4?ex=65887c3b&is=6576073b&hm=dcf61995b16f6456e105074f6ce6bed09db41a1addc57964b7f64510045bc725&"
           type="video/mp4">
         Your browser does not support the video tag.
@@ -164,7 +156,7 @@
     </div>
 
     <div class="media-box">
-      <video controls class="media">
+      <video controls class="media" onclick="toggleZoom(this)">
         <source src="https://cdn.discordapp.com/attachments/827466194981355531/847243299264659456/2021_____2021.mp4?ex=65836dcf&is=6570f8cf&hm=62202956d4c3818e898196887df9b6f50da4bdd7b38be9a476609e4855d26540&"
           type="video/mp4">
         Your browser does not support the video tag.
@@ -172,7 +164,7 @@
     </div>
 
     <div class="media-box">
-      <video controls class="media">
+      <video controls class="media" onclick="toggleZoom(this)">
         <source src="https://cdn.discordapp.com/attachments/933703566248513596/950319702759067709/MedalTVGrandTheftAutoSanAndreas20220306071507.mp4?ex=65894731&is=6576d231&hm=0dd5663ff5bfbef96eb66b2cb8fd3ad9c4cf72b0c85eef375b6faa61dceac1ef&"
           type="video/mp4">
         Your browser does not support the video tag.
