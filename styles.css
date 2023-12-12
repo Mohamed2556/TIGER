@@ -1,30 +1,106 @@
-document.addEventListener('DOMContentLoaded', async function () {
-    try {
-        const response = await fetch('http://localhost:3000/');
-        const data = await response.json();
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
 
-        document.getElementById('totalMembers').innerText = data.totalMembers;
-        document.getElementById('totalBots').innerText = data.totalBots;
-        document.getElementById('activeMembers').innerText = data.totalActive;
-        document.getElementById('inactiveMembers').innerText = data.totalInactive;
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
 
-    } catch (error) {
-        console.error(error);
-        alert('Error fetching data. Please try again later.');
-    }
-});
+.server-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
 
-function handleClick() {
-    var currentDate = new Date().getTime();
-  
-    // Check if the button was clicked more than a week ago or if it has never been clicked
-    if (!localStorage.getItem('lastClickDate') || (currentDate - localStorage.getItem('lastClickDate') > 7 * 24 * 60 * 60 * 1000)) {
-      // Allow the click and update the last click date
-      alert("Button clicked!");
-      localStorage.setItem('lastClickDate', currentDate);
-    } else {
-      // Inform the user that the button can only be clicked once a week
-      alert("You can only click the button once a week.");
-    }
-  }
-  
+h1 {
+  color: #333;
+}
+
+span {
+  font-weight: bold;
+}
+
+.media-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.media-box {
+  box-sizing: border-box;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.media {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+button {
+  position: relative;
+  padding: 12px 35px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid #FEC195;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all .3s ease-in-out;
+  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
+}
+
+button:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+}
+
+button:hover:before {
+  transform: translateX(15em);
+}
+
+.star-1, .star-2, .star-3, .star-4, .star-5, .star-6 {
+  position: absolute;
+  width: 25px; /* Adjust size as needed */
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 { top: 45%; left: 45%; width: 15px; }
+.star-3 { top: 40%; left: 40%; width: 5px; }
+.star-4 { top: 20%; left: 40%; width: 8px; }
+.star-5 { top: 25%; left: 45%; width: 15px; }
+.star-6 { top: 5%; left: 50%; width: 5px; }
