@@ -25,6 +25,7 @@
   }
 
    
+  
 
   body {
 
@@ -678,4 +679,80 @@
 
 </body>
 
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Up/Down</title>
+    <style>
+        body {
+            height: 150vh; /* Adding extra height to the body for demonstration */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Content goes here -->
+
+    <script>
+        let startY;
+
+        function handleTouchStart(event) {
+            startY = event.touches[0].clientY;
+        }
+
+        function handleTouchMove(event) {
+            if (!startY) return;
+
+            const currentY = event.touches[0].clientY;
+            const deltaY = currentY - startY;
+
+            if (Math.abs(deltaY) >= 5) {
+                window.scrollBy(0, deltaY);
+                startY = currentY;
+            }
+        }
+
+        function handleTouchEnd() {
+            startY = null;
+        }
+
+        document.addEventListener('touchstart', handleTouchStart, false);
+        document.addEventListener('touchmove', handleTouchMove, false);
+        document.addEventListener('touchend', handleTouchEnd, false);
+
+        // For desktop
+        let isMouseDown = false;
+
+        function handleMouseDown(event) {
+            isMouseDown = true;
+            startY = event.clientY;
+        }
+
+        function handleMouseMove(event) {
+            if (!isMouseDown) return;
+
+            const currentY = event.clientY;
+            const deltaY = currentY - startY;
+
+            if (Math.abs(deltaY) >= 5) {
+                window.scrollBy(0, deltaY);
+                startY = currentY;
+            }
+        }
+
+        function handleMouseUp() {
+            isMouseDown = false;
+            startY = null;
+        }
+
+        document.addEventListener('mousedown', handleMouseDown, false);
+        document.addEventListener('mousemove', handleMouseMove, false);
+        document.addEventListener('mouseup', handleMouseUp, false);
+    </script>
+</body>
 </html>
