@@ -1,374 +1,681 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
-<title>Your Web Page Title</title>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discord Server Status</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(0deg, #000000 0%, #750000 100%);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden;
-    }
 
-    #dragon-container {
-      position: absolute;
-      top: 10%;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: left;
-      pointer-events: none;
-    }
+ <meta charset="UTF-8">
 
-    #dragon {
-      width: 150px;
-      height: 150px;
-      transition: transform 0.1s ease-in-out;
-    }
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-      text-align: center;
-      padding: 50px;
-      color: rgb(4, 0, 237);
-      position: relative;
-      z-index: 1;
-    }
+ <title>Your Web Page Title</title>
 
-    .server-image {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
+ <link rel="stylesheet" href="styles.css">
 
-    .server-image.zoomed {
-      transform: scale(1.5);
-    }
+ <style>
 
-    h1 {
-      font-size: 2.5em;
-      margin: 20px 0;
-    }
-  </style>
+  body {
+
+   overflow: auto; /* Enable vertical and horizontal scrolling */
+
+   margin: 0; /* Remove default margin to utilize the full viewport */
+
+   padding: 0; /* Remove default padding */
+
+  }
+
+   
+
+  body {
+
+   margin: 0;
+
+   padding: 0;
+
+   background: linear-gradient(0deg, #000000 0%, #750000 100%);
+
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+   overflow: hidden;
+
+  }
+
+
+
+  #dragon-container {
+
+   position: absolute;
+
+   top: 10%;
+
+   width: 100%;
+
+   height: 100%;
+
+   display: flex;
+
+   justify-content: center;
+
+   align-items: left;
+
+   pointer-events: none;
+
+  }
+
+
+
+  #dragon {
+
+   width: 150px;
+
+   height: 150px;
+
+   transition: transform 0.1s ease-in-out;
+
+  }
+
+
+
+  .container {
+
+   text-align: center;
+
+   padding: 50px;
+
+   color: rgb(4, 0, 237);
+
+   position: relative;
+
+   z-index: 1;
+
+  }
+
+
+
+  .server-image {
+
+   width: 150px;
+
+   height: 150px;
+
+   border-radius: 50%;
+
+   cursor: pointer;
+
+   transition: transform 0.3s ease-in-out;
+
+  }
+
+
+
+  .server-image.zoomed {
+
+   transform: scale(1.5);
+
+  }
+
+
+
+  h1 {
+
+   font-size: 2.5em;
+
+   margin: 20px 0;
+
+  }
+
+
+
+  .media-container {
+
+   display: flex;
+
+   justify-content: center;
+
+   align-items: center;
+
+   flex-wrap: wrap;
+
+   margin-top: 50px;
+
+  }
+
+
+
+  .media-box {
+
+   width: 200px;
+
+   height: 300px;
+
+   margin: 10px;
+
+   display: flex;
+
+   justify-content: center;
+
+   align-items: center;
+
+  }
+
+
+
+  .card {
+
+   background-color: #fff;
+
+   border-radius: 10px;
+
+   padding: 20px;
+
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+   text-align: center;
+
+  }
+
+
+
+  .card-title {
+
+   font-size: 1.5em;
+
+   margin-bottom: 10px;
+
+  }
+
+
+
+  .media {
+
+   width: 150px;
+
+   height: 150px;
+
+   object-fit: cover;
+
+   border-radius: 10px;
+
+   cursor: pointer;
+
+   transition: transform 0.3s ease-in-out;
+
+  }
+
+
+
+  .media:hover {
+
+   transform: scale(1.1);
+
+  }
+
+
+
+  .menu {
+
+   display: flex;
+
+   justify-content: space-between;
+
+   max-width: 400px;
+
+   margin: 0 auto;
+
+  }
+
+
+
+  .button {
+
+   display: inline-block;
+
+   padding: 10px 20px;
+
+   text-align: center;
+
+   text-decoration: none;
+
+   font-size: 16px;
+
+   border-radius: 5px;
+
+  }
+
+
+
+  .youtube-button {
+
+   background-color: #000000;
+
+   color: #000000;
+
+   border: 2px solid #000000;
+
+  }
+
+
+
+  .youtube-button:hover {
+
+   background-color: #000000;
+
+   color: #000000;
+
+  }
+
+
+
+  .discord-button {
+
+   background-color: #7289da;
+
+   color: #ffffff;
+
+   border: 2px solid #7289da;
+
+  }
+
+
+
+  .discord-button:hover {
+
+   background-color: #ffffff;
+
+   color: #7289da;
+
+  }
+
+ </style>
+
 </head>
 
 <body>
 
-  <div id="dragon-container">
-    <img id="dragon" src="https://bestanimations.com/media/dragons/289479165dragon-animated-gif-67.gif" alt="Dragon">
+ <div id="dragon-container">
+
+  <img id="dragon" src="https://bestanimations.com/media/dragons/289479165dragon-animated-gif-67.gif" alt="Dragon">
+
+ </div>
+
+
+
+ <div class="container">
+
+  <img src="https://images-ext-1.discordapp.net/external/bhtUL203evEWGthd_hgnH-KEZy3fYWxHbkdegUl6cog/%3Fsize%3D1024/https/cdn.discordapp.com/icons/759529731879337985/100ce2258bf73793b75874663cf25cc3.png?format=webp&quality=lossless&width=993&height=993"
+
+   alt="Server Icon" class="server-image" onclick="toggleZoom(this)" />
+
+
+
+  <h1>Server R.ESCOBAR#1👑</h1>
+
+
+
+  <p>OWNER: <span id="totalMembers">JAMES⚔️</span></p>
+
+
+
+  <p>Leader Members: <span id="totalBots">6</span></p>
+
+
+
+  <p>R.ESCOBAR Members: <span id="activeMembers">211</span></p>
+
+
+
+  <p>THE BEST GANG IN MTA: <span id="inactiveMembers">R.ESCOBAR#1</span></p>
+
+ </div>
+
+
+
+ <div class="media-container">
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY:JAMES</h2>
+
+    <img src="https://cdn.discordapp.com/attachments/827466194981355531/944668637325844510/IMG__.jpg?ex=65872d3a&is=6574b83a&hm=6172ba2330decddf57c6daf866ae3f15c8d7bcc463d659ff98faec40553b3bea&"
+
+     alt="Image 1" class="media" onclick="toggleZoom(this)" />
+
+   </div>
+
   </div>
 
-  <div class="container">
-    <img src="https://images-ext-1.discordapp.net/external/bhtUL203evEWGthd_hgnH-KEZy3fYWxHbkdegUl6cog/%3Fsize%3D1024/https/cdn.discordapp.com/icons/759529731879337985/100ce2258bf73793b75874663cf25cc3.png?format=webp&quality=lossless&width=993&height=993"
-      alt="Server Icon" class="server-image" onclick="toggleZoom(this)" />
 
-    <h1>Server R.ESCOBAR#1👑</h1>
 
-    <p>OWNER: <span id="totalMembers">JAMES⚔️</span></p>
+  <div class="media-box">
 
-    <p>Leader Members: <span id="totalBots">6</span></p>
+   <div class="card">
 
-    <p>R.ESCOBAR Members: <span id="activeMembers">211</span></p>
+    <h2 class="card-title">BY:JAMES 2</h2>
 
-    <p>THE BEST GANG IN MTA: <span id="inactiveMembers">R.ESCOBAR#1</span></p>
+    <img src="https://cdn.discordapp.com/attachments/827466194981355531/933703782880149524/mta-screen_2022-01-20_14-41-51.png" alt="Image 2" class="media" onclick="toggleZoom(this)" />
+
+   </div>
+
   </div>
 
-  <div class="media-container">
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES</h2>
-        <img src="https://cdn.discordapp.com/attachments/827466194981355531/944668637325844510/IMG__.jpg?ex=65872d3a&is=6574b83a&hm=6172ba2330decddf57c6daf866ae3f15c8d7bcc463d659ff98faec40553b3bea&"
-          alt="Image 1" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
 
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 2</h2>
-        <img src="https://cdn.discordapp.com/attachments/827466194981355531/933703782880149524/mta-screen_2022-01-20_14-41-51.png" alt="Image 2" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
 
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 3</h2>
-        <img src="https://cdn.discordapp.com/attachments/827466194981355531/872914862823596042/mta-screen_2021-03-04_19-46-10.png?ex=65848951&is=65721451&hm=0c3ccefce0a1c62ad3f1b1bb2cb1093a8a89fe4ade2da018fe327f31f06bd191&"
-          alt="Image 3" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
+  <div class="media-box">
 
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 4</h2>
-        <img src="https://cdn.discordapp.com/attachments/694718113190510642/1184298403442729040/image.png?ex=658b76d6&is=657901d6&hm=e5a8aaee4e08093f38f11c5d38f0908cc0031c54f5fc78a34d6fd1137f0f048d&"
-          alt="Image 4" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
+   <div class="card">
 
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 5</h2>
-        <img src="https://cdn.discordapp.com/attachments/827466194981355531/864800319674253342/mta-screen_2021-07-14_11-27-19.png?ex=6582b38f&is=65703e8f&hm=8b6a00d5da8b24b676899581d6ba2017539b212c660748ef575362a12e932742&"
-          alt="Image 5" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
+    <h2 class="card-title">BY:JAMES 3</h2>
 
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 6</h2>
-        <img src="https://cdn.discordapp.com/attachments/827466194981355531/844336569367134208/mta-screen_2021-03-04_23-39-29.png?ex=65821535&is=656fa035&hm=ccc3d92941ad31dc9f58917f29f209f50dd01ae1867615383355d528225252f5&"
-          alt="Image 6" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
+    <img src="https://cdn.discordapp.com/attachments/827466194981355531/872914862823596042/mta-screen_2021-03-04_19-46-10.png?ex=65848951&is=65721451&hm=0c3ccefce0a1c62ad3f1b1bb2cb1093a8a89fe4ade2da018fe327f31f06bd191&"
 
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 7</h2>
-        <img src="https://cdn.discordapp.com/attachments/827466194981355531/842772045568671814/mta-screen_2021-05-14_16-34-21.png?ex=65859ea1&is=657329a1&hm=d7dbb96b0e8c0e2439ac5ee4ca2482e90def6b15354a42fb9f9c61543c7ef487&"
-          alt="Image 7" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
+     alt="Image 3" class="media" onclick="toggleZoom(this)" />
 
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 8</h2>
-        <img src="https://cdn.discordapp.com/attachments/827466194981355531/836224394727653376/IMG_20210426_145515.jpg?ex=65897c28&is=65770728&hm=9ebcbdc44da10c070d6298292bae1dd3bd7fb4cf3aa8140fe8a2ac3ded2e4495&"
-          alt="Image 8" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
+   </div>
 
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 9</h2>
-        <img src="https://cdn.discordapp.com/attachments/827466194981355531/831931981356597279/mta-screen_2021-04-14_01-04-58.png?ex=65831908&is=6570a408&hm=aa4e032345fbf25d334e1bc9bf5566f0b01159018f681142348e22795a52a840&"
-          alt="Image 9" class="media" onclick="toggleZoom(this)" />
-      </div>
-    </div>
-
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 1</h2>
-        <video controls class="media" onclick="toggleZoom(this)">
-          <source src="https://cdn.discordapp.com/attachments/827466194981355531/942491630412365905/MTA__San_Andreas_2022-02-13_20-36-04_Trim.mp4?ex=65887c3b&is=6576073b&hm=dcf61995b16f6456e105074f6ce6bed09db41a1addc57964b7f64510045bc725&"
-            type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY: JAMES 2</h2>
-        <!-- Replace the YouTube video URL in the 'src' attribute with the embed code -->
-        <iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/HidxaBW--so" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-    
-
-    <div class="media-box">
-      <div class="card">
-        <h2 class="card-title">BY:JAMES 3</h2>
-        <video controls class="media" onclick="toggleZoom(this)">
-          <source src="https://cdn.discordapp.com/attachments/933703566248513596/950319702759067709/MedalTVGrandTheftAutoSanAndreas20220306071507.mp4?ex=65894731&is=6576d231&hm=0dd5663ff5bfbef96eb66b2cb8fd3ad9c4cf72b0c85eef375b6faa61dceac1ef&"
-            type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
   </div>
 
-  <style>
-    .menu {
-      display: flex;
-      justify-content: space-between;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-  
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 16px;
-      border-radius: 5px;
-    }
-  
-    .youtube-button {
-      background-color: #000000;
-      color: #000000;
-      border: 2px solid #000000;
-    }
-  
-    .youtube-button:hover {
-      background-color: #000000;
-      color: #000000;
-    }
-  
-    .discord-button {
-      background-color: #7289da;
-      color: #ffffff;
-      border: 2px solid #7289da;
-    }
-  
-    .discord-button:hover {
-      background-color: #ffffff;
-      color: #7289da;
-    }
-  </style>
-  
-  <div class="menu">
-    <a href="https://discord.gg/3pkU9Dn9Ug" class="button discord-button" target="_blank">Discord Link</a>
+
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY:JAMES 4</h2>
+
+    <img src="https://cdn.discordapp.com/attachments/694718113190510642/1184298403442729040/image.png?ex=658b76d6&is=657901d6&hm=e5a8aaee4e08093f38f11c5d38f0908cc0031c54f5fc78a34d6fd1137f0f048d&"
+
+     alt="Image 4" class="media" onclick="toggleZoom(this)" />
+
+   </div>
+
   </div>
 
-  <script>
-    const dragon = document.getElementById('dragon');
-    
-    let mouseX = 0;
-    let mouseY = 0;
-    let dragonX = 0;
-    let dragonY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-    
-    function animate() {
-      requestAnimationFrame(animate);
+
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY:JAMES 5</h2>
+
+    <img src="https://cdn.discordapp.com/attachments/827466194981355531/864800319674253342/mta-screen_2021-07-14_11-27-19.png?ex=6582b38f&is=65703e8f&hm=8b6a00d5da8b24b676899581d6ba2017539b212c660748ef575362a12e932742&"
+
+     alt="Image 5" class="media" onclick="toggleZoom(this)" />
+
+   </div>
+
+  </div>
+
+
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY:JAMES 6</h2>
+
+    <img src="https://cdn.discordapp.com/attachments/827466194981355531/844336569367134208/mta-screen_2021-03-04_23-39-29.png?ex=65821535&is=656fa035&hm=ccc3d92941ad31dc9f58917f29f209f50dd01ae1867615383355d528225252f5&"
+
+     alt="Image 6" class="media" onclick="toggleZoom(this)" />
+
+   </div>
+
+  </div>
+
+
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY:JAMES 7</h2>
+
+    <img src="https://cdn.discordapp.com/attachments/827466194981355531/842772045568671814/mta-screen_2021-05-14_16-34-21.png?ex=65859ea1&is=657329a1&hm=d7dbb96b0e8c0e2439ac5ee4ca2482e90def6b15354a42fb9f9c61543c7ef487&"
+
+     alt="Image 7" class="media" onclick="toggleZoom(this)" />
+
+   </div>
+
+  </div>
+
+
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY:JAMES 8</h2>
+
+    <img src="https://cdn.discordapp.com/attachments/827466194981355531/836224394727653376/IMG_20210426_145515.jpg?ex=65897c28&is=65770728&hm=9ebcbdc44da10c070d6298292bae1dd3bd7fb4cf3aa8140fe8a2ac3ded2e4495&"
+
+     alt="Image 8" class="media" onclick="toggleZoom(this)" />
+
+   </div>
+
+  </div>
+
+
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY:JAMES 9</h2>
+
+    <img src="https://cdn.discordapp.com/attachments/827466194981355531/831931981356597279/mta-screen_2021-04-14_01-04-58.png?ex=65831908&is=6570a408&hm=aa4e032345fbf25d334e1bc9bf5566f0b01159018f681142348e22795a52a840&"
+
+     alt="Image 9" class="media" onclick="toggleZoom(this)" />
+
+   </div>
+
+  </div>
+
+
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY:JAMES 1</h2>
+
+    <video controls class="media" onclick="toggleZoom(this)">
+
+     <source src="https://cdn.discordapp.com/attachments/827466194981355531/942491630412365905/MTA__San_Andreas_2022-02-13_20-36-04_Trim.mp4?ex=65887c3b&is=6576073b&hm=dcf61995b16f6456e105074f6ce6bed09db41a1addc57964b7f64510045bc725&"
+
+      type="video/mp4">
+
+     Your browser does not support the video tag.
+
+    </video>
+
+   </div>
+
+  </div>
+
+
+
+  <div class="media-box">
+
+   <div class="card">
+
+    <h2 class="card-title">BY: JAMES 2</h2>
+
+    <!-- Replace the YouTube video URL in the 'src' attribute with the embed code -->
+
+    <iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/HidxaBW--so" frameborder="0" allowfullscreen></iframe>
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+
+ <div class="menu">
+
+    <a href="https://discord.gg/aw7qfKYP8z" target="_blank">
+        <button class="btn">
+          <svg id="github" viewBox="0 0 24 24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#0092E4" height="40" width="40">
+            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path>
+          </svg>
+        </button>
+      </a>
       
-      const easing = 0.1;
-      const dx = mouseX - dragonX;
-      const dy = mouseY - dragonY;
-      
-      dragonX += dx * easing;
-      dragonY += dy * easing;
-      
-      dragon.style.transform = `translate(${dragonX}px, ${dragonY}px)`;
-    }
-    
-    animate();
 
-    function toggleZoom(element) {
-      element.classList.toggle("zoomed");
-    }
-  </script>
-
-</body>
-
-</html>
-
-</style>
-</head>
-<body>
-  <audio controls loop autoplay>
-    <source src="media.mp3" type="audio/mp3">
-    Your browser does not support the audio tag.
-  </audio>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Link with Star Ratings</title>
-  <style>
-    /* Add your styles here */
-    button {
-      background-color: #da0004;
-      color: #000000;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .star-1, .star-2, .star-3, .star-4, .star-5, .star-6 {
-      display: inline-block;
-      margin: 0 5px;
-    }
-
-    /* Add more styles as needed */
-  </style>
-</head>
-<body>
-
-
-  
-<button onclick="redirectToYouTube()">
-Yotube JAMES⚔️
-  <div class="star-1">
-    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
-  </div>
-  <div class="star-2">
-    <!-- Repeat the same SVG for other stars -->
-  </div>
 </button>
 
-<script>
-  function redirectToYouTube() {
-    // Replace 'YOUR_YOUTUBE_VIDEO_LINK' with your actual YouTube video link
-    window.location.href = 'https://www.youtube.com/channel/UCB1t3KkiQHjT37Dhxzg0guA';
+<button class="box">
+  <a href="https://www.youtube.com/@officialjames8003/videos" target="_blank">Youtube Link</a>
+</button>
+
+
+ </div>
+
+
+
+ <script>
+
+  const dragon = document.getElementById('dragon');
+
+   
+
+  let mouseX = 0;
+
+  let mouseY = 0;
+
+  let dragonX = 0;
+
+  let dragonY = 0;
+
+   
+
+  document.addEventListener('mousemove', (e) => {
+
+   mouseX = e.clientX;
+
+   mouseY = e.clientY;
+
+  });
+
+   
+
+  function animate() {
+
+   requestAnimationFrame(animate);
+
+    
+
+   const easing = 0.1;
+
+   const dx = mouseX - dragonX;
+
+   const dy = mouseY - dragonY;
+
+    
+
+   dragonX += dx * easing;
+
+   dragonY += dy * easing;
+
+    
+
+   dragon.style.transform = `translate(${dragonX}px, ${dragonY}px)`;
+
   }
-</script>
 
-<!-- Visitor Count -->
-<style>
-  /* Add your desired text styles here */
-  #visitorCount {
-    font-weight: bold;
-    color: #ff5733; /* Change the color as needed */
-    /* Add other styles as needed */
-  }
-</style>
+   
 
-<style>
-  /* Text style for the visitor count message */
-  #visitorMessage {
-    color: white; /* Change the color to white or your preferred color */
-    /* Add other styles as needed */
+  animate();
+
+
+
+  function toggleZoom(element) {
+
+   element.classList.toggle("zoomed");
+
   }
 
-  /* Text style for the visitor count number */
-  #visitorCount {
-    font-weight: bold;
-    color: #ff5733; /* Change the color as needed */
-    /* Add other styles as needed */
-  }
-</style>
+ </script>
 
-<!-- Visitor Count -->
-<p id="visitorMessage">This website has been visited <span id="visitorCount">0</span> times.</p>
 
-<script>
+
+<div class="box">
+    <button class="button" id="playButton">LISTEN</button>
+    <div class="music">
+      <span class="soundwave" style="--i: 12"></span>
+      <span class="soundwave" style="--i: 31"></span>
+      <span class="soundwave" style="--i: 25"></span>
+      <span class="soundwave" style="--i: 18"></span>
+      <span class="soundwave" style="--i: 11"></span>
+      <span class="soundwave" style="--i: 23"></span>
+      <span class="soundwave" style="--i: 16"></span>
+      <span class="soundwave" style="--i: 34"></span>
+      <span class="soundwave" style="--i: 19"></span>
+      <span class="soundwave" style="--i: 14"></span>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var audio = new Audio("media.mp3");
+      var playButton = document.getElementById("playButton");
+  
+      playButton.addEventListener("click", function () {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      });
+    });
+  </script>
+  
+
+
+
+ <script>
+
   // Function to increment and display the visitor count
-  function incrementCounter() {
-    if (localStorage.getItem('visitCount') === null) {
-      // If the counter doesn't exist, initialize it to 1
-      localStorage.setItem('visitCount', 1);
-    } else {
-      // If the counter exists, increment it
-      let count = parseInt(localStorage.getItem('visitCount'), 10);
-      count++;
-      localStorage.setItem('visitCount', count);
-    }
 
-    // Display the visitor count
-    document.getElementById('visitorCount').innerText = localStorage.getItem('visitCount');
+  function incrementCounter() {
+
+   if (localStorage.getItem('visitCount') === null) {
+
+    // If the counter doesn't exist, initialize it to 1
+
+    localStorage.setItem('visitCount', 1);
+
+   } else {
+
+    // If the counter exists, increment it
+
+    let count = parseInt(localStorage.getItem('visitCount'), 10);
+
+    count++;
+
+    localStorage.setItem('visitCount', count);
+
+   }
+
+
+
+   // Display the visitor count
+
+   document.getElementById('visitorCount').innerText = localStorage.getItem('visitCount');
+
   }
+
+
 
   // Run the incrementCounter function when the page loads
+
   window.onload = incrementCounter;
-</script>
+
+ </script>
+
 </body>
+
+</html>
