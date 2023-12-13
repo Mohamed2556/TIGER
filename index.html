@@ -68,31 +68,49 @@
 </head>
 <body>
 
-<div class="chatbox">
-<div class="chatbox-header">Chatbox</div>
-<div class="chatbox-body" id="chatboxBody"></div>
-<div class="chatbox-footer">
-  <input type="text" id="messageInput" placeholder="Type your message...">
-  <button id="sendButton" onclick="sendMessage()">Send</button>
-</div>
+  <div class="chatbox">
+    <div class="chatbox-header">Chatbox</div>
+    <div class="chatbox-body" id="chatboxBody"></div>
+    <div class="chatbox-footer">
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button id="sendButton" onclick="sendMessage()">Send</button>
+    </div>
 </div>
 
 <script>
-function sendMessage() {
-  var messageInput = document.getElementById('messageInput');
-  var chatboxBody = document.getElementById('chatboxBody');
+    function sendMessage() {
+        var messageInput = document.getElementById('messageInput');
+        var chatboxBody = document.getElementById('chatboxBody');
 
-  if (messageInput.value.trim() !== '') {
-      var message = '<div><strong>You:</strong> ' + messageInput.value + '</div>';
-      chatboxBody.innerHTML += message;
-      saveComment(message); // Save the comment to localStorage
-      messageInput.value = '';
-  }
-}
+        if (messageInput.value.trim() !== '') {
+            var message = '<div><strong>You:</strong> ' + messageInput.value + '</div>';
+            chatboxBody.innerHTML += message;
+            saveComment(message); // Save the comment to localStorage
+            messageInput.value = '';
+        }
+    }
 
-// Load comments when the page loads
-window.onload = loadComments;
+    function saveComment(comment) {
+        var comments = localStorage.getItem('chatComments') || '[]';
+        comments = JSON.parse(comments);
+        comments.push(comment);
+        localStorage.setItem('chatComments', JSON.stringify(comments));
+    }
+
+    function loadComments() {
+        var chatboxBody = document.getElementById('chatboxBody');
+        var comments = localStorage.getItem('chatComments') || '[]';
+        comments = JSON.parse(comments);
+
+        chatboxBody.innerHTML = comments.join('');
+    }
+
+    // Load comments when the page loads
+    window.onload = function () {
+        loadComments();
+    };
 </script>
+
 
 
 
